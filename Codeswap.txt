@@ -1,0 +1,169 @@
+import React, { useState } from 'react';
+import { Bell, Search, Users, Clock, AlertTriangle, CheckCircle, Filter } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
+
+export default function ServiceDeskDashboard() {
+  const [activeTab, setActiveTab] = useState('workspace');
+
+  return (
+    <div className="p-4 max-w-[1200px] mx-auto">
+      <header className="flex justify-between items-center mb-6">
+        <div className="flex items-center gap-4">
+          <h1 className="text-2xl font-bold">Service Desk Portal</h1>
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <TabsList>
+              <TabsTrigger value="workspace">My Workspace</TabsTrigger>
+              <TabsTrigger value="team">Team View</TabsTrigger>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+        <div className="flex items-center gap-4">
+          <Button variant="outline" size="icon">
+            <Bell className="h-4 w-4" />
+          </Button>
+          <div className="flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2">
+            <Search className="h-4 w-4 text-gray-500" />
+            <input 
+              type="text" 
+              placeholder="Search tickets, users, knowledge base..." 
+              className="bg-transparent border-none outline-none w-64"
+            />
+          </div>
+        </div>
+      </header>
+
+      <div className="grid grid-cols-3 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center justify-between">
+              <span>Active Tickets</span>
+              <Filter className="h-4 w-4 text-gray-500" />
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {[
+                { id: 1234, priority: 'High', type: 'SLA Risk', user: 'John Doe' },
+                { id: 2345, priority: 'Medium', type: 'VIP', user: 'Sarah Smith' },
+                { id: 3456, priority: 'Low', type: 'General', user: 'Mike Johnson' }
+              ].map(ticket => (
+                <div key={ticket.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div>
+                    <div className="font-medium">#{ticket.id} - {ticket.user}</div>
+                    <div className="text-sm text-gray-500">{ticket.type}</div>
+                  </div>
+                  <Button size="sm" variant={ticket.priority === 'High' ? 'destructive' : 'outline'}>
+                    {ticket.priority}
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Performance Metrics</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between mb-1">
+                  <span>Response Time</span>
+                  <span>4.7/5</span>
+                </div>
+                <Progress value={94} />
+              </div>
+              <div>
+                <div className="flex justify-between mb-1">
+                  <span>Customer Satisfaction</span>
+                  <span>4.5/5</span>
+                </div>
+                <Progress value={90} />
+              </div>
+              <div>
+                <div className="flex justify-between mb-1">
+                  <span>Tickets Resolved</span>
+                  <span>47/50</span>
+                </div>
+                <Progress value={94} />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>AI Insights</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-4 w-4 text-yellow-500" />
+                <span>3 tickets at risk of SLA breach</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="h-4 w-4 text-blue-500" />
+                <span>2 VIP customers waiting response</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>15 tickets auto-resolved by AI</span>
+              </div>
+              <Button className="w-full">View AI Recommendations</Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid grid-cols-2 gap-6 mt-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Knowledge Base</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              {[
+                { id: 1, title: 'Password Reset Guide', views: 1234 },
+                { id: 2, title: 'VPN Connection Issues', views: 987 },
+                { id: 3, title: 'Email Configuration', views: 756 }
+              ].map(article => (
+                <div key={article.id} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded-md">
+                  <span>{article.title}</span>
+                  <span className="text-sm text-gray-500">{article.views} views</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Recent Activity</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {[
+                { time: '10:30 AM', action: 'Resolved ticket #1234', user: 'You' },
+                { time: '09:45 AM', action: 'Assigned ticket #2345', user: 'System' },
+                { time: '09:15 AM', action: 'Updated knowledge base', user: 'You' }
+              ].map((activity, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <Clock className="h-4 w-4 text-gray-500" />
+                  <div>
+                    <div className="font-medium">{activity.action}</div>
+                    <div className="text-sm text-gray-500">{activity.time} - {activity.user}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
