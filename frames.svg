@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <style>
+    text { font-family: Arial, sans-serif; }
+    .header { font-size: 18px; font-weight: bold; }
+    .subheader { font-size: 14px; }
+    .item { font-size: 12px; }
+  </style>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f0f0"/>
+  
+  <!-- Header -->
+  <rect x="10" y="10" width="780" height="40" rx="5" fill="#e0e0e0"/>
+  <text x="20" y="35" class="header">Agent Workspace</text>
+  <!-- <rect x="180" y="15" width="100" height="30" rx="15" fill="#d0d0d0"/>
+  <text x="200" y="35" class="subheader">Workspace</text> -->
+  <!-- <rect x="290" y="15" width="100" height="30" rx="15" fill="#d0d0d0"/>
+  <text x="315" y="35" class="subheader">Analytics</text> -->
+  <rect x="550" y="15" width="230" height="30" rx="15" fill="#ffffff"/>
+  
+  <!-- Customer Sentiment Analysis -->
+  <rect x="10" y="60" width="780" height="110" rx="5" fill="#ffffff"/>
+  <text x="20" y="85" class="subheader">Customer Sentiment Analysis</text>
+  
+  <!-- Sentiment Line Graph -->
+  <rect x="20" y="95" width="250" height="65" rx="5" fill="#f0f0f0"/>
+  <polyline points="30,150 70,130 110,140 150,120 190,135 230,110 270,125" style="fill:none;stroke:blue;stroke-width:2"/>
+  <text x="120" y="110" class="item">Sentiment Trends</text>
+  
+  <!-- Pie Chart -->
+  <rect x="280" y="95" width="120" height="65" rx="5" fill="#f0f0f0"/>
+  <circle cx="340" cy="128" r="25" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M340,128 L340,103 A25,25 0 0,1 362,138 Z" fill="red"/>
+  <path d="M340,128 L362,138 A25,25 0 0,1 318,138 Z" fill="green"/>
+  <path d="M340,128 L318,138 A25,25 0 0,1 340,103 Z" fill="blue"/>
+  <text x="315" y="110" class="item">Categories</text>
+  
+  <!-- Bar Chart -->
+  <rect x="410" y="95" width="180" height="65" rx="5" fill="#f0f0f0"/>
+  <rect x="420" y="130" width="20" height="20" fill="blue"/>
+  <rect x="450" y="120" width="20" height="30" fill="blue"/>
+  <rect x="480" y="110" width="20" height="40" fill="blue"/>
+  <rect x="510" y="140" width="20" height="10" fill="blue"/>
+  <rect x="540" y="125" width="20" height="25" fill="blue"/>
+  <text x="460" y="110" class="item">Satisfaction Scores</text>
+  
+  <!-- Word Cloud -->
+  <rect x="600" y="95" width="180" height="65" rx="5" fill="#f0f0f0"/>
+  <text x="610" y="120" class="item" fill="blue">Service</text>
+  <text x="670" y="140" class="item" fill="red">Quality</text>
+  <text x="640" y="130" class="item" fill="green">Fast</text>
+  <text x="720" y="115" class="item" fill="purple">Reliable</text>
+  <text x="680" y="110" class="item">Keyword Analysis</text>
+
+  <!-- Ticket Based Interactions -->
+  <rect x="10" y="180" width="250" height="150" rx="5" fill="#ffffff"/>
+  <text x="20" y="205" class="subheader">Ticket Based Interactions</text>
+  <rect x="20" y="215" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="235" class="item">Voice Call</text>
+  <rect x="20" y="250" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="270" class="item">Chat Support</text>
+  <rect x="20" y="285" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="305" class="item">Email Support</text>
+  
+  <!-- Review Tickets -->
+  <rect x="270" y="180" width="250" height="220" rx="5" fill="#ffffff"/>
+  <text x="280" y="205" class="subheader">Review Tickets</text>
+  <rect x="280" y="215" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="290" y="235" class="item">Unresolved Tickets</text>
+  <rect x="280" y="250" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="290" y="270" class="item">Resolved Tickets</text>
+  <rect x="280" y="285" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="290" y="305" class="item">Prioritize Tickets</text>
+  <rect x="280" y="320" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="290" y="340" class="item">High Priority Tickets</text>
+  <rect x="280" y="355" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="290" y="375" class="item">Low Priority Tickets</text>
+  
+  <!-- Remote Actions -->
+  <rect x="530" y="180" width="250" height="150" rx="5" fill="#ffffff"/>
+  <text x="540" y="205" class="subheader">Remote Actions</text>
+  <rect x="540" y="215" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="550" y="235" class="item">Install Updates</text>
+  <rect x="540" y="250" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="550" y="270" class="item">Install Custom Scripts</text>
+  <rect x="540" y="285" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="550" y="305" class="item">Other Actions</text>
+  
+  <!-- Knowledge Base Articles -->
+  <rect x="10" y="340" width="250" height="190" rx="5" fill="#ffffff"/>
+  <text x="20" y="365" class="subheader">Knowledge Base Articles</text>
+  <rect x="20" y="375" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="395" class="item">Most Raised Incidents</text>
+  <rect x="20" y="410" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="430" class="item">Incident History</text>
+  <rect x="20" y="445" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="465" class="item">High Priority Incidents</text>
+  <rect x="20" y="480" width="230" height="30" rx="5" fill="#f0f0f0"/>
+  <text x="30" y="500" class="item">Most Affected Devices</text>
+  
+  <!-- IntelliAgent Chatbot -->
+  <rect x="530" y="340" width="250" height="250" rx="5" fill="#ffffff"/>
+  <text x="540" y="365" class="subheader">IntelliAgent</text>
+  <rect x="540" y="375" width="230" height="170" rx="5" fill="#f0f0f0"/>
+  <text x="550" y="395" class="item">Chatbot Interface</text>
+  <rect x="540" y="550" width="230" height="30" rx="5" fill="#e0e0e0"/>
+  <text x="550" y="570" class="item">Type your question here...</text>
+</svg>
